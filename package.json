@@ -1,0 +1,39 @@
+{
+  "name": "import-index-generator",
+  "version": "0.1.0",
+  "description": "Autogenerate a JS modules which exports all the modules present on a directory",
+  "scripts": {
+    "lint": "standard main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cycloidio/import-index-generator.git"
+  },
+  "keywords": [
+    "Javascript",
+    "JS2015",
+    "code-generation"
+  ],
+  "author": "Cycloid (https://cycloid.io)",
+  "license": "MIT",
+  "bin": {
+    "iigen": "./main.js"
+  },
+  "scripts": {
+    "lint": "standard main.js",
+    "test-same-output-dir": "node main.js fixtures fixtures/result-js > /dev/null && diff fixtures/result-js fixtures/output-js",
+    "test-diff-output-dir": "node main.js fixtures result-js-and-vue js,vue > /dev/null && diff  result-js-and-vue fixtures/output-js-and-vue",
+    "test": "npm run -s test-same-output-dir && npm run -s test-diff-output-dir && npm run -s clean",
+    "clean": "rm -f fixtures/result-js result-js-and-vue "
+  },
+  "bugs": {
+    "url": "https://github.com/cycloidio/import-index-generator/issues"
+  },
+  "homepage": "https://github.com/cycloidio/import-index-generator#readme",
+  "devDependencies": {
+    "standard": "^9.0.1"
+  },
+  "dependencies": {
+    "relative": "^3.0.2"
+  }
+}
