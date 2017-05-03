@@ -23,8 +23,10 @@
     "lint": "standard main.js",
     "test-same-output-dir": "node main.js fixtures fixtures/result-js > /dev/null && diff fixtures/result-js fixtures/output-js",
     "test-diff-output-dir": "node main.js fixtures result-js-and-vue js,vue > /dev/null && diff  result-js-and-vue fixtures/output-js-and-vue",
-    "test": "npm run -s test-same-output-dir && npm run -s test-diff-output-dir && npm run -s clean",
-    "clean": "rm -f fixtures/result-js result-js-and-vue "
+    "test-recurse-js": "node main.js fixtures -r fixtures/result-recurse-js > /dev/null && diff fixtures/result-recurse-js fixtures/output-recurse-js",
+    "test-recurse-js-and-vue": "node main.js -r fixtures fixtures/result-recurse-js-and-vue js,vue > /dev/null && diff fixtures/result-recurse-js-and-vue fixtures/output-recurse-js-and-vue",
+    "test": "npm run -s test-same-output-dir && npm run -s test-diff-output-dir && npm run -s test-recurse-js && npm run -s test-recurse-js-and-vue && npm run -s clean",
+    "clean": "rm -f fixtures/result-js result-js-and-vue fixtures/result-recurse-js fixtures/result-recurse-js-and-vue "
   },
   "bugs": {
     "url": "https://github.com/cycloidio/import-index-generator/issues"
