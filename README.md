@@ -24,12 +24,16 @@ If you don't have installed it globally (it's preferable not to so, for the reas
 You will get the same below message
 
 ```
-iigen [src-dir-path] [output] [list-extensions]
+iigen [-r] [src-dir-path] [output] [list-extensions]
 
-Get the list of the file just contained in the passed source directory path (no
-recurse the subdirectories) and generates "index" files which exports a list of
-objects with the file name (just the name with the extension but without the
-path) and the exported stuff.
+Get the list of the file just contained in the passed source directory path and
+generates "index" files which exports a list of objects with the file name
+(just the name with the extension but without the path) and the exported stuff.
+
+The [-r] flag indicates to recur the source directory to list all the files on
+it and its sub directories. It's optional, hence, by default, the tool doesn't
+recur the directory. The flag can be set in any position, it isn't stricly
+necessary to appear in the same position written in this help message.
 
 The [ouput] parameter is optional an it's the file path used to write the
 generated "index" file, otherwise a temporary file is generated.
