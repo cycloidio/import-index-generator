@@ -1,6 +1,6 @@
 {
   "name": "import-index-generator",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Autogenerate a JS modules which exports all the modules present on a directory",
   "scripts": {
     "lint": "standard main.js",
