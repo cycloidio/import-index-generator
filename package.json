@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/cycloidio/import-index-generator#readme",
   "devDependencies": {
-    "standard": "^9.0.1"
+    "standard": "^17.0.0"
   },
   "dependencies": {
     "relative": "^3.0.2"
